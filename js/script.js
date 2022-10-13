@@ -1,0 +1,34 @@
+$( document ).ready(function() {
+
+    $(function(){
+    	var windowH = $(window).height();
+    	var wrapperH = $('.hero').height();
+    	if(windowH > wrapperH) {                            
+    		$('.hero').css({'height':($(window).height())+'px'});
+    	}                                                                               
+    	$(window).resize(function(){
+    		var windowH = $(window).height();
+    		var wrapperH = $('.hero').height();
+    		var differenceH = windowH - wrapperH;
+    		var newH = wrapperH + differenceH;
+    		var truecontentH = $('#truecontent').height();
+    		if(windowH > truecontentH) {
+    			$('.hero').css('height', (newH)+'px');
+    		}
+
+    	})          
+    });
+	
+});
+"use strict"
+         var map;
+         function initMap(){
+             map= new google.maps.Map( document.getElementById("map"),{
+                 center: {
+                     lat: 5.02836,
+                     lng: -73.9992,
+
+                     },
+                 zoom: 13,
+             });
+         }
